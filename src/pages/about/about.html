@@ -7,5 +7,9 @@
 </ion-header>
 
 <ion-content padding>
+  <h3>Current Latitude: {{location.lat}}</h3>
+  <h3>Current Longitude: {{location.lng}}</h3>
 
+    <button ion-button full primary (click)="location.correrGps()">Corer</button>
+    <button ion-button full primary (click)="location.pararGps()">parar</button>
 </ion-content>

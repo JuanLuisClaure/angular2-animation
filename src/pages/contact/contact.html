@@ -7,11 +7,35 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-left></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+  <!-- <ion-list>
+    <ion-list-header> -->
+      <!-- <div  [@animationPrecio]="this.animationState" style="
+      background:transparent;
+      color: black;
+      text-align: center;">
+      <h1> <b>55</b> Bs.</h1>
+    </div>
+
+    <div  [@animationPrecio]="this.animationState" style="    background: #3e3e3e;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;">
+  </div> -->
+  <div>
+    <input type="radio" name="colors" (click)="anima='trackingInExpand'">Green
+    <input type="radio" name="colors" (click)="anima='trackingincontractbckbottom'">Yellow
+    <input type="radio" name="colors" (click)="anima='focusinexpandfwd'">Cyan
+  </div>
+  <div>
+    <button ion-button (click)="triggerAnimation()">{{ num }}</button>
+
+  </div>
+<componente (ser)="otherSomething($event)" [count]="num"></componente>
+<!-- </ion-list-header> -->
+<!-- <ion-item> -->
+  <!-- <ion-icon name="ionic" item-left></ion-icon> -->
+
+<!-- </ion-item> -->
+<!-- </ion-list> -->
 </ion-content>
