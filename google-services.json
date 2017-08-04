@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "583280310625",
+    "firebase_url": "https://realworld-29cc0.firebaseio.com",
+    "project_id": "realworld-29cc0",
+    "storage_bucket": "realworld-29cc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583280310625:android:e15f4bb4a9cd6175",
+        "android_client_info": {
+          "package_name": "io.ionic.firebase.prueba"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583280310625-sdjrgqdqh2lk7ofcq322amnvin65f0mu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1KAcsJ53Nxcf9b8__pKXRn-7azmRBclM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583280310625:android:6e26eaa8ecbc726b",
+        "android_client_info": {
+          "package_name": "co.zupa.testeando"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583280310625-sdjrgqdqh2lk7ofcq322amnvin65f0mu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1KAcsJ53Nxcf9b8__pKXRn-7azmRBclM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { Facebook } from '@ionic-native/facebook';
+import { FCM } from '@ionic-native/fcm';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -25,6 +26,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LocationProvider } from '../providers/location/location';
 import { AnimacionesDirective } from '../directives/animaciones/animaciones';
 import { ServicioProvider } from '../providers/servicio/servicio';
+import { AuthProvider } from '../providers/auth/auth';
+import { PushProvider } from '../providers/push/push';
+import { FirebaseProvider } from '../providers/firebase/firebase';
 
 var config = {
   apiKey: "AIzaSyDZ-LYMYYh9Rz4rtLg5EXjv-o3H2TR98T0",
@@ -71,10 +75,14 @@ var config = {
     Geolocation,
     BackgroundMode,
     Facebook,
+    FCM,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LocationProvider,
     ServicioProvider,
-    ServicioProvider
+    ServicioProvider,
+    AuthProvider,
+    PushProvider,
+    FirebaseProvider
   ]
 })
 export class AppModule {}

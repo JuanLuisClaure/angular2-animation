@@ -58,9 +58,11 @@ export class AnimacionesDirective {
   }
 
 
-  @HostListener('ts', ['$event'] ) otraFuncion(event: Event){
-    // this.quitarClase(event.target, this.animationName)
-    console.log(event)
+  @HostListener('active', ['$event'] ) activeFuncion(event: Event){
+
+  }
+  @HostListener('inactive', ['$event'] ) inactiveFuncion(event: Event){
+
   }
 
 

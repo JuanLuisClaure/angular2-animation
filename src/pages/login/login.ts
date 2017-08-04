@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../../pages/tabs/tabs';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
-import firebase from 'firebase';
+import { AuthProvider } from '../../providers/auth/auth'
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -16,44 +15,27 @@ import firebase from 'firebase';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public fb: Facebook, public afAuth: AngularFireAuth) {
+  aja:any
+  puyol:any
+  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthProvider) {
 
   }
 
   ionViewDidLoad() {
-    this.verificarFB()
+    let yes    = this.auth.verificarFB()
+    this.aja   = this.auth.signIn()
   }
 
 
-  signIn(){
-    this.fb.login(['email']).then((response: FacebookLoginResponse)=>{
-              let facebookCredential = firebase.auth.FacebookAuthProvider.credential(response.authResponse.accessToken)
+cacheando(){
+  this.auth.hacerPromesa(this.aja).then(()=>{
 
-              this.afAuth.auth.signInWithCredential(facebookCredential).then((success) => {
-
-                    this.navCtrl.setRoot(TabsPage)
-                  })
-                  .catch((error) => {
-                    console.log("Firebase failure: " + JSON.stringify(error));
-                  });
-
-              }).catch((error)=>{
-                console.log('error al registarse con facebook: ' + JSON.stringify(error))
-              })
+    this.navCtrl.setRoot(TabsPage)
+  })
+}
 
 
-  }
-  verificarFB(){
-    this.fb.getLoginStatus().then((response)=>{
-      if(response.status === 'connected'){
-        console.log(response.status)
-        this.navCtrl.setRoot(TabsPage)
-      }else{
-        console.log(response.status)
-        return
-      }
 
-    }).catch((error)=>{console.log('es un error' + error)})
-  }
+
+
 }
