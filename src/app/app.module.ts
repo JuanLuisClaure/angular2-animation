@@ -24,11 +24,12 @@ import { ComponentePage } from '../pages/componente/componente';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LocationProvider } from '../providers/location/location';
-import { AnimacionesDirective } from '../directives/animaciones/animaciones';
-import { ServicioProvider } from '../providers/servicio/servicio';
+// import { AnimacionesDirective } from '../directives/animaciones/animaciones';
+// import { ServicioProvider } from '../providers/servicio/servicio';
 import { AuthProvider } from '../providers/auth/auth';
 import { PushProvider } from '../providers/push/push';
 import { FirebaseProvider } from '../providers/firebase/firebase';
+import { MisionProvider } from '../providers/mision/mision';
 
 var config = {
   apiKey: "AIzaSyDZ-LYMYYh9Rz4rtLg5EXjv-o3H2TR98T0",
@@ -47,7 +48,7 @@ var config = {
     HomePage,
     TabsPage,
     LoginPage,
-    AnimacionesDirective,
+    // AnimacionesDirective,
     ComponentePage
   ],
   imports: [
@@ -78,11 +79,10 @@ var config = {
     FCM,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LocationProvider,
-    ServicioProvider,
-    ServicioProvider,
     AuthProvider,
     PushProvider,
-    FirebaseProvider
+    FirebaseProvider,
+    MisionProvider
   ]
 })
 export class AppModule {}

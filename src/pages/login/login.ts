@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../../pages/tabs/tabs';
 import { AuthProvider } from '../../providers/auth/auth'
+import { FirebaseProvider } from '../../providers/firebase/firebase'
+import { FacebookLoginResponse } from '@ionic-native/facebook';
+
 
 /**
  * Generated class for the LoginPage page.
@@ -17,21 +20,32 @@ import { AuthProvider } from '../../providers/auth/auth'
 export class LoginPage {
   aja:any
   puyol:any
-  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthProvider) {
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthProvider, public fb: FirebaseProvider) {
 
   }
 
   ionViewDidLoad() {
-    let yes    = this.auth.verificarFB()
-    this.aja   = this.auth.signIn()
+    // let yes    = this.auth.verificarFB()
+  //
+  // this.aja   =
   }
 
 
 cacheando(){
-  this.auth.hacerPromesa(this.aja).then(()=>{
 
-    this.navCtrl.setRoot(TabsPage)
+this.auth.signIn().then((response)=>{
+  this.fb.loginFacebook(response).then((objFb)=>{
+
+    this.navCtrl.setRoot(TabsPage,{
+      datosFB: objFb
+    })
+
   })
+
+})
+
 }
 
 

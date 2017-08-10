@@ -18,39 +18,28 @@ export class FirebaseProvider {
   firestore  = firebase.database().ref('/pushtokens');
   firemsg    = firebase.database().ref('/messages');
   fireOrders = firebase.database().ref('/orders');
-  userUi:any
+  // userUi:any
+  euas:any
+  weareone:any
 
 
   constructor(public http: Http, public auth: AuthProvider, public push: PushProvider, public afDB: AngularFireDatabase) {
     console.log('Hello FirebaseProvider Provider' );
   }
 
-
-crearUsuario(){
-
-
-let euas = this.auth.agarraUidFromUser()
-console.log(euas)
-if(euas === null){
-  console.log('es null')
-}else{
+loginFacebook(response){
 
 
-Promise.all([this.push.agarrarToken(), this.auth.agarraUidFromUser()]).then((success)=>{
-    this.afDB.list(this.firestore).push({
-      uid:success[1],
-      devtoken: success[0]
-    }).then(() => {
-      alert('asociacion exitosa de usuario y token');
-    }).catch(() => {
-      alert('asociacion no exitosa');
-    })
-  }).catch((err)=>{console.log('error',err)})
+  const facebookCredential = firebase.auth.FacebookAuthProvider.credential(response.authResponse.accessToken)
 
+  let thiss = firebase.auth().signInWithCredential(facebookCredential)
 
-
+  return thiss
 }
-
+// logOutFacebook(): promise<any>{
+//   firebase.auth.Auth.signOut()
+// }
+crearUsuario(){
 
 }
 

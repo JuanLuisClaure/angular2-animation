@@ -11,7 +11,6 @@ ChangeDetectorRef,
 NgZone,
 Renderer2 } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ServicioProvider } from '../../providers/servicio/servicio'
 import { ComponentePage } from '../componente/componente'
 
 @Component({
@@ -67,7 +66,7 @@ export class ContactPage {
    unico:any
    anima:string = 'vacio'
 
-  constructor(public navCtrl: NavController, public zone: NgZone, public servicio: ServicioProvider,public render2: Renderer2 ) {
+  constructor(public navCtrl: NavController, public zone: NgZone, public render2: Renderer2 ) {
 
 
 
@@ -114,8 +113,8 @@ export class ContactPage {
 
 
 
-
-       this.servicio.unaFuncionParaTodos(this.vara, this.anima, 15, this.render2)
+       //
+      //  this.servicio.unaFuncionParaTodos(this.vara, this.anima, 15, this.render2)
 
        //
       //  console.log(elvalor.idElm)

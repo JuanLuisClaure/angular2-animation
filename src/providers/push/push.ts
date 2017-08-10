@@ -15,14 +15,16 @@ export class PushProvider {
   constructor(public http: Http, public fcm: FCM) {
     console.log('Hello PushProvider Provider');
   }
-
-  agarrarToken(){
-    let creo = this.fcm.getToken().then((token)=>{
-      return token
-    }).catch((err)=>{console.log(err)});
-
-    return creo
-  }
+  //
+  // agarrarToken(): Promise<any>{
+  //
+  //
+  //   let creo = this.fcm.getToken().then((token)=>{
+  //     return token
+  //   }).catch((err)=>{console.log(err)});
+  //
+  //   return creo
+  // }
 
 
   guardarMensajeDelPush(evento: string, msg: string){
@@ -32,6 +34,12 @@ export class PushProvider {
       //   message: msg
       // })
 
+  }
+  agarrarToken():Promise<any>{
+
+    let ass = this.fcm.getToken()
+
+    return ass
   }
 
 }
