@@ -7,9 +7,25 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Current Latitude: {{location.lat}}</h3>
+  <ion-content fullscreen>
+
+    <button ion-button >Drag Me!</button>
+
+    <button ion-button fav>Drag Me!</button>
+
+    <ion-card fav startLeft="200" startTop="200">
+        <ion-card-content>
+            Drag me!
+        </ion-card-content>
+    </ion-card>
+
+    <p fav>
+        Drag me!
+    </p>
+</ion-content>
+  <!-- <h3>Current Latitude: {{location.lat}}</h3>
   <h3>Current Longitude: {{location.lng}}</h3>
 
     <button ion-button full primary (click)="location.correrGps()">Corer</button>
-    <button ion-button full primary (click)="location.pararGps()">parar</button>
+    <button ion-button full primary (click)="location.pararGps()">parar</button> -->
 </ion-content>

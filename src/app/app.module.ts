@@ -20,6 +20,8 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ComponentePage } from '../pages/componente/componente';
 
+import 'hammerjs';
+import 'hammer-timejs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,6 +32,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { PushProvider } from '../providers/push/push';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { MisionProvider } from '../providers/mision/mision';
+import { FavDirective } from '../directives/fav/fav';
 
 var config = {
   apiKey: "AIzaSyDZ-LYMYYh9Rz4rtLg5EXjv-o3H2TR98T0",
@@ -49,7 +52,8 @@ var config = {
     TabsPage,
     LoginPage,
     // AnimacionesDirective,
-    ComponentePage
+    ComponentePage,
+    FavDirective
   ],
   imports: [
     BrowserModule,

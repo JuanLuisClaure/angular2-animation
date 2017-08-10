@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<!-- <ion-content padding>
   <h2>Welcome to Ionic!</h2>
   <p>
     This starter project comes with simple tabs-based layout for apps
@@ -16,5 +16,18 @@
   </p>
     <button ion-button (click)="boton()">LogOut</button>
     <button ion-button (click)="boton()">LogOut</button>
+
+</ion-content> -->
+
+
+  <ion-content>
+
+
+      <ion-fab  [ngStyle]="{'left.px': x, 'top.px':y }" (panstart)="onPanStart($event)" (panmove)="onPan($event)" >
+
+          <button ion-fab >({{x}}, {{y}})</button>
+
+      </ion-fab>
+
 
 </ion-content>

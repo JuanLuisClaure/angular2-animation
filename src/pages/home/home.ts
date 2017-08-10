@@ -26,6 +26,11 @@ export class HomePage {
   yes:any
   datosFb:any;
 
+    x: number = 50;
+    y: number = 50;
+    startX: number = 0;
+    startY: number = 0;
+
     photos: Observable<any[]>;
 
   constructor(public navCtrl: NavController,public navParams:NavParams , public auth: AuthProvider, public fb: FirebaseProvider, public  push: PushProvider) {
@@ -72,8 +77,16 @@ export class HomePage {
 
 
   }
+  onPanStart(event: any): void {
+    this.startX = this.x;
+    this.startY = this.y;
+  }
 
-
+  onPan(event: any): void {
+    event.preventDefault();
+    this.x = this.startX + event.deltaX;
+    this.y = this.startY + event.deltaY;
+  }
 
 
   boton(){
