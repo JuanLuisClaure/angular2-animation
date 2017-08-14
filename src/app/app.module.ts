@@ -33,6 +33,7 @@ import { PushProvider } from '../providers/push/push';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { MisionProvider } from '../providers/mision/mision';
 import { FavDirective } from '../directives/fav/fav';
+import { FabComponent } from '../components/fab/fab';
 
 var config = {
   apiKey: "AIzaSyDZ-LYMYYh9Rz4rtLg5EXjv-o3H2TR98T0",
@@ -53,7 +54,8 @@ var config = {
     LoginPage,
     // AnimacionesDirective,
     ComponentePage,
-    FavDirective
+    FavDirective,
+    FabComponent,
   ],
   imports: [
     BrowserModule,

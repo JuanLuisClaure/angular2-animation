@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Platform  } from 'ionic-angular';
 import { LoginPage } from '../../pages/login/login';
 import { AuthProvider } from '../../providers/auth/auth'
 import { PushProvider } from '../../providers/push/push'
@@ -12,28 +12,23 @@ import 'rxjs/add/operator/map';
 import firebase from 'firebase';
 
 @Component({
-  inputs: ['datosFacebook'],
+
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  @Input() datosFacebook:any;
+
 
   // currenUser:string;
   // facebookToken:any;
   // deviceToken:any;
-  uju:any
-  yes:any
+  uju:any;
+  yes:any;
   datosFb:any;
 
-    x: number = 50;
-    y: number = 50;
-    startX: number = 0;
-    startY: number = 0;
 
-    photos: Observable<any[]>;
+  constructor(public navCtrl: NavController,public platform: Platform, public navParams:NavParams , public auth: AuthProvider, public fb: FirebaseProvider, public  push: PushProvider) {
 
-  constructor(public navCtrl: NavController,public navParams:NavParams , public auth: AuthProvider, public fb: FirebaseProvider, public  push: PushProvider) {
 
     // this.datosFb = new Promise((resolve, reject)=>{resolve())})  // this.tokenFb()
     // this.facebookToken = this.tokenFb()
@@ -58,6 +53,9 @@ export class HomePage {
     // this.push.agarrarToken().then((response)=>{
     //   console.log(response)
     // })
+
+
+
     this.auth.hacerPromesa(this.auth.quieroElDatoDelLogin()).then((success)=>{
       this.yes = success
       console.log(this.yes.status)
@@ -76,16 +74,6 @@ export class HomePage {
     // let yei   =
 
 
-  }
-  onPanStart(event: any): void {
-    this.startX = this.x;
-    this.startY = this.y;
-  }
-
-  onPan(event: any): void {
-    event.preventDefault();
-    this.x = this.startX + event.deltaX;
-    this.y = this.startY + event.deltaY;
   }
 
 
